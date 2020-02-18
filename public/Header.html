@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyCityDoctors </title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" type="text/css" href="Home.css">
+  <script defer src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+</head>
+<body>
+	<div class="container">
+  		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  			<a class="navbar-brand MyCityDoctors" href="Header.html">MyCityDoctors</a>
+  			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded			="false" aria-label="Toggle navigation">
+    			<span class="navbar-toggler-icon"></span>
+  			</button>
+
+  			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    			<ul class="navbar-nav mr-auto">
+      				<li class="nav-item active">
+        				<a class="nav-link" href="Header.html">Home <span class="sr-only">(current)</span></a>
+      				</li>
+      				<li class="nav-item">
+        				<a class="nav-link" href="AboutUs.html">About Us</a>
+      				</li>
+      				<li class="nav-item">
+        				<a class="nav-link" href="ContactUs.html">Contact Us</a>
+      				</li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
+                <div class="dropdown-content" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="Catergories/ANESTHETIC">ANESTHETIC</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
+    			</ul>
+    			<form class="form-inline my-2 my-lg-0" action="Search">
+            <div>
+              <select name="types" class="SearchType">
+                <option value="1">All</option>
+                <option value="2">Categories</option>
+                <option value="3">Doctors</option>
+                <option value="4">Location</option>
+                <option value="5">All</option>
+              </select>
+            </div>
+    	  		<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="query" id="query">
+	      		<button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search">Search</button>
+    			</form>
+  			</div>
+		</nav>
+
+
+
+
+
+		<div class="jumbotron">
+      <form class="" action="/Search" style="margin-top: 22px;">
+        <input id="searchInput" type="search" placeholder="Search" aria-label="Search" name="query">
+        <a href="#" class="btn btn-outline-success my-2 my-sm-0">Delhi</a>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search">Search</button>
+      </form>
+		  <h1 class="display-4">Welcome to MyCityDoctors!</h1>
+		</div>
+
+
+
+
+
+    <h3>Categories:</h3>
+      <div class="row">
+        <div class="col-lg-4 col-sm-6">
+          <div class="img-thumbnail">
+              <a href="Catergories/ANESTHETIC">
+              <img src="ANESTHETIC.jpg">
+              <button class="ctg">ANESTHETIC</button>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="img-thumbnail">
+              <a href="Catergories/CARDIOLOGIST">
+              <img src="CARDIOLOGIST.jpg">
+              <button class="ctg">CARDIOLOGIST</button>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="img-thumbnail">
+              <a href="Catergories/Dentist">
+              <img src="Dentist.jpg">
+              <button class="ctg">Dentist</button>
+              </a>
+            </div>
+          </div>
+      </div>
+      <button class="more"><a href="Categories.html">More..</a></button>
+
+
+
+
+
+
+
+
+      <h3>Advertisement:</h3>
+      <div class="row">
+          <div class="col-lg-4 col-sm-6">
+            <div class="img-thumbnail">
+              <img src="ANESTHETIC.jpg">
+              <button class="ctg">ANESTHETIC</button>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="img-thumbnail">
+              <img src="ANESTHETIC.jpg">
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="img-thumbnail">
+                <a href="www.google.com"><img src="ANESTHETIC.jpg">
+                <button class="ctg">ANESTHETIC</button></a>
+            </div>
+        </div>
+      </div>
+      <button class="more"><a href="Jobs.html">More..</a></button>
+	</div>
+
+
+
+
+
+
+  <div class="footer">
+     Copy Right @MyCityDoctors.co.in
+  </div>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAwjO4bvRU9dwsu8Eu5hMvIFFkuNvJZHPA",
+    authDomain: "my-city-doctor.firebaseapp.com",
+    databaseURL: "https://my-city-doctor.firebaseio.com",
+    projectId: "my-city-doctor",
+    storageBucket: "my-city-doctor.appspot.com",
+    messagingSenderId: "353722567485",
+    appId: "1:353722567485:web:de3a6d61faf5f4841b5354"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

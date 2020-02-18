@@ -1,0 +1,41 @@
+<%- include('partials/Header') ; -%>
+  <div class="containers">
+    <font size="5">
+    <h3 style="margin-bottom:20px;"><span class="Initbar">i</span>Your Result:</h3>
+      <diiv class="row">
+      <% for(var i=0;i<doctors.length;i++){%>
+      <div class="col-lg-6 col-sm-12">
+      <div class="row docview">
+          <div class="col-lg-4 col-4">
+            <h3 class="docCat"><%=doctors[i].docCategory %></h3>
+            <div class="img-thumbnails">
+              <a href="/Categories/<%=doctors[i].docCategory %>/<%=id[i]%>">
+              <img src="<%=doctors[i].userProfileImage %>" class="docImg">
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-5 col-5" style="margin-top:30px;">
+            <div class="img-thumbnails" style="background-color:white;">
+              <a href="/Categories/<%=doctors[i].docCategory %>/<%=id[i]%>"></a>
+              <h2 style="font-size: 140%;margin-top:20px"><%=doctors[i].docName.toUpperCase() %></h2>
+              <h4 style="margin:15px 0px;"><%=doctors[i].docDegree %><h4>
+              <%=doctors[i].one %> - <%=doctors[i].two %><br><%=doctors[i].three %>  - <%=doctors[i].four %><br>
+              <p style="word-break: break-all;"><%=doctors[i].docHoliday %></p>
+              <a href="/Categories/<%=doctors[i].docCategory %>/<%=id[i]%>">..more</a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-3">
+            <h2 style="margin-top:25px; text-align:center; margin-left:-50px"><%=doctors[i].docTypeName %>
+            <% if(doctors[i].doc24Hours){ %><img src="https://firebasestorage.googleapis.com/v0/b/my-city-doctor.appspot.com/o/24h.jpeg?alt=media&token=bd9630b9-fb26-4935-90c1-b45b49f3251d" style="height:35px;"><% }%>
+            
+            </h2>
+            <a href="/chat"><h3 class="ctg1">Chat Now</h3></a>
+            <button class="ctg2" onclick="alert('<%=doctors[i].docMobNumber %>')"><h3 style="color:white;">Call Now</h3></button>
+            <h2 style="margin-top:25px; text-align:center;  margin-left:-50px;"><img src="https://firebasestorage.googleapis.com/v0/b/my-city-doctor.appspot.com/o/map.png?alt=media&token=d88ca901-e343-4f06-a865-2abe0c6cd137c" style="height:35px; margin-right:10px; margin-left:-50px;"><%=doctors[i].docCity %></h2>
+          </div>
+	      </div>
+        </div><% } %>
+        </div>
+        </font>
+  </div>
+<%- include('partials/Footer') ; -%>

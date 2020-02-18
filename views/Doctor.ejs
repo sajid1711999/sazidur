@@ -1,0 +1,27 @@
+<%- include('partials/Header') ; -%>
+  <div class="containers">
+    <div class="doctframe" style="margin-top:75px;">
+      <div class="img-thumbnail" style="background-color: rgba(200,200,200,0.4);">
+        <div style="max-width: 550px;max-height: 400px; margin: auto;">
+        <img src="<%=doctor.userProfileImage %>" style="max-height: 400px;">
+        </div>
+        <table>
+          <tr><th>Name</th><th style="text-align: left;"><%=doctor.docName %></th></tr>
+          <tr><td>Category</td><td style="text-align: left;"><%=doctor.docCategory %></td></tr>
+          <tr><td>Degree</td><td style="text-align: left;"><%=doctor.docDegree %></td></tr>
+          <tr><td>Consultation Fee</td><td style="text-align: left;"><%=doctor.consultationFee %></td></tr>
+          <tr><td>Emergenct Fee</td><td style="text-align: left;"><%=doctor.emergencyFee %></td></tr>
+          <tr><td>Experience</td><td style="text-align: left;"><%=doctor.docExperience %></td></tr>
+          <tr><td>Timing</td><td style="text-align: left;"><%=doctor.one %></td></tr>
+          <tr><td>Mobile Number</td><td style="text-align: left;"><%=doctor.docMobNumber %></td></tr>
+          <tr><td>24 Hours</td><td style="text-align: left;"><%=doctor.doc24Hours %></td></tr>
+          <tr><td>Holiday</td><td style="text-align: left;"><%=doctor.docHoliday %></td></tr>
+          <tr><td>Description</td><td style="text-align: left;"><%=doctor.docDescription %></td></tr>
+          <tr><td>Address</td><td style="text-align: left;"><%=doctor.docAddress %></td></tr>
+          <tr><td>City</td><td style="text-align: left;"><%=doctor.docCity %></td></tr>
+          <tr><td>State</td><td style="text-align: left;"><%=doctor.docState %></td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+<%- include('partials/Footer') ; -%>

@@ -1,0 +1,118 @@
+<%- include('partials/Header') ; -%>
+<link rel="stylesheet" type="text/css" href="Swape.css">
+<font size="5">
+  <div class="contaners">
+    <div class="jumbotrons" style="margin-left:100px;">
+      <form class="" action="/Search" style="margin-top: 90px;">
+        <a href="/Location" class="btn btn-info" name="city" value="<%=city %>"><%=city %></a>
+        <input id="searchInput" type="search" placeholder="Search Doctor here" aria-label="Search" name="query">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search">Search</button>
+      </form>
+		</div>
+      <h3><span class="Initbar">i</span>Categories:</h3>
+      <div class="row">
+        <div class="col-lg-3 col-4">
+          <div class="img-thumbnail">
+            <a href="Categories/Ambulance">
+            <img src="ambulance.jpeg" class="catimg">
+            <div class="adiv">Ambulance</div>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-4">
+            <div class="img-thumbnail">
+              <a href="Categories/Blood bank">
+              <img src="blood bank.jpeg" class="catimg">
+              <div class="adiv">Blood bank</div>
+              </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-4">
+            <div class="img-thumbnail">
+              <a href="Categories/CARDIOLOGIST">
+              <img src="CARDIOLOGIST.jpg" class="catimg">
+              <div class="adiv">CARDIOLOGIST</div>
+              </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-4">
+            <div class="img-thumbnail">
+              <a href="Categories/Neurologist">
+              <img src="Neurologist.jpg" class="catimg">
+              <div class="adiv">Neurologist</div>
+              </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-4">
+            <div class="img-thumbnail">
+              <a href="Categories/Gynecologist">
+              <img src="Gynecologist.png" class="catimg">
+              <div class="adiv">Gynecologist</div>
+              </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-4">
+            <div class="img-thumbnail">
+              <a href="Categories/General physician">
+              <img src="General physician.jpg" class="catimg">
+              <div class="adiv">General physician</div>
+              </a>
+            </div>
+        </div>
+      </div>
+      <button class="more"><a href="Categories">More..</a></button>
+
+      <h3><span class="Initbar">i</span>Advertise:</h3>
+
+      <div class="pn-ProductNav_Wrapper" style="margin-top:30px">
+        <div id="pnProductNav" class="pn-ProductNav">
+          <div id="pnProductNavContents" class="pn-ProductNav_Contents">
+          <% for(var i=0;i<offers.length;i++){ %>
+            <a href="<% if(offers[i].clickable=='yes'){ %>
+               <%=offers[i].link %> <%} %>
+              " class="pn-ProductNav_Link " style="width:600px;">
+            <img src="<%=offers[i].img %>" style="height: 350px; max-width:600px; box-shadow: 0px 5px rgb(228, 221, 221);"></a>
+            <% }%>
+          <span id="pnIndicator" class="pn-ProductNav_Indicator"></span>
+          </div>
+        </div>
+      </div>
+      <h3 style="margin-bottom:20px;"><span class="Initbar">i</span>Doctors in <%=city %>:</h3>
+      <diiv class="row">
+      <% for(var i=0;i<doctors.length;i++){%>
+      <div class="col-lg-6 col-sm-12">
+      <div class="row docview">
+          <div class="col-lg-4 col-4">
+            <h3 class="docCat"><%=doctors[i].docCategory %></h3>
+            <div class="img-thumbnails">
+              <a href="/Categories/<%=doctors[i].docCategory %>/<%=id[i]%>">
+              <img src="<%=doctors[i].userProfileImage %>" class="docImg">
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-5 col-5" style="margin-top:30px;">
+            <div class="img-thumbnails">
+              
+              <h2 style="font-size: 140%;margin-top:10px"><%=doctors[i].docName.toUpperCase() %></h2>
+              <h4 style="margin:15px 0px;"><%=doctors[i].docDegree %></h4>
+              <%=doctors[i].one %> - <%=doctors[i].two %><br><%=doctors[i].three %>  - <%=doctors[i].four %><br>
+              <p style="word-break: break-all; font-size:20px;"><%=doctors[i].docHoliday %></p>
+              <a href="/Categories/<%=doctors[i].docCategory %>/<%=id[i]%>">..more</a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-3">
+            <h2 class="docCity"><%=doctors[i].docTypeName %>
+            <% if(doctors[i].doc24Hours){ %><img src="https://firebasestorage.googleapis.com/v0/b/my-city-doctor.appspot.com/o/24h.jpeg?alt=media&token=bd9630b9-fb26-4935-90c1-b45b49f3251d" style="height:35px;"><% }%>
+            
+            </h2>
+            <a class="ctg1" href="/chat"><h3 class="ctg1">Chat Now</h3></a>
+            <button class="ctg2" onclick="alert('<%=doctors[i].docMobNumber %>')"><h3 style="color:white;">Call Now</h3></button>
+            <h2 class="docCity"><img src="https://firebasestorage.googleapis.com/v0/b/my-city-doctor.appspot.com/o/map.png?alt=media&token=d88ca901-e343-4f06-a865-2abe0c6cd137" style="height:35px; margin-right:10px; margin-left:-50px;"><%=doctors[i].docCity %></h2>
+          </div>
+	      </div>
+        </div><% } %>
+        </div>
+      </div>
+    </font></div>
+  <script type="text/javascript" src=""></script>
+<%- include('partials/Footer') ; -%>
